@@ -13,6 +13,7 @@ import ReportsPage from "./Components/ReportsPage/ReportsPage";
 import SettingsPage from "./Components/SettingsPage/SettingsPage";
 import AddExpenseForm from "./Components/ExpensesPage/AddExpenseForm";
 import ExpenseLayout from "./Components/ExpensesPage/ExpenseLayout";
+import PrivateRoute from "./Components/hooks/PrivateRoute";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:3000/";
@@ -25,19 +26,23 @@ function App() {
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/signup" element={<SignupPage />} />
 
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
-          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+            </Route>
 
-          {/* Settings Route */}
-          <Route path="settings" element={<SettingsPage />} />
-          {/* Report Route */}
-          <Route path="reports" element={<ReportsPage />} />
+            <Route path="auth" element={<h1>Welcome</h1>} />
 
-          {/* Expense Route */}
-          <Route path="/expenses" element={<ExpenseLayout />}>
-            <Route index element={<ExpensesPage />} />
-            <Route path="add" element={<AddExpenseForm />} />
+            {/* Settings Route */}
+            <Route path="settings" element={<SettingsPage />} />
+            {/* Report Route */}
+            <Route path="reports" element={<ReportsPage />} />
+
+            {/* Expense Route */}
+            <Route path="/expenses" element={<ExpenseLayout />}>
+              <Route index element={<ExpensesPage />} />
+              <Route path="add" element={<AddExpenseForm />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -20,11 +20,11 @@ const Dashboard = () => {
       <div className="bg-white p-6 shadow rounded-lg mt-6">
         <h3 className="text-gray-600 text-lg mb-4">Recent Transactions</h3>
         <ul>
-          <li className="flex justify-between py-2 border-b">
+          <li className="flex justify-between py-2 border-b border-gray-400">
             <span>Electric Bill</span>
             <span className="text-red-600">- $100</span>
           </li>
-          <li className="flex justify-between py-2 border-b">
+          <li className="flex justify-between py-2 border-b border-gray-400">
             <span>Freelance Income</span>
             <span className="text-green-600">+ $500</span>
           </li>

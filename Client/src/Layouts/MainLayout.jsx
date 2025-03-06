@@ -2,8 +2,8 @@
 // src/components/DashboardLayout.jsx
 import "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from "../Components/Navbar";
+import Sidebar from "../Components/Sidebar";
 import { useState } from "react";
 
 const MainLayout = () => {

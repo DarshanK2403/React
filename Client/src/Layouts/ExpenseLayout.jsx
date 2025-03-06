@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import ExpenseNav from "./ExpenseNav";
+import ExpenseNav from "../Pages/ExpensesPage/ExpenseNav";
 import MainLayout from "../common/MainLayout";
 import { Outlet } from "react-router-dom";
 
